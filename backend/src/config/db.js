@@ -2,14 +2,20 @@
  * Database configuration - creates a connection pool for MySQL.
  * Reads credentials from environment variables. Used by all routes.
  */
+
+//1QtLuDjjkD8I1kYk
+
 import mysql from 'mysql2/promise';
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT, 10) || 3306,
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'ayursutra_db',
+  host: 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
+  port: 4000,
+  user: '3EQQcsGgsSZKmv3.root',
+  password: '1QtLuDjjkD8I1kYk', // 🔴 replace with your actual password
+  database: 'test',
+  ssl: {  
+    rejectUnauthorized: true
+  },
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

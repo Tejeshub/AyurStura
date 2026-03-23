@@ -16,7 +16,7 @@ import chatbotRoutes from './routes/chatbotRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:3000';
+const FRONTEND_URL = process.env.FRONTEND_URL || '*';
 
 // CORS: allow frontend origin and credentials (cookies)
 app.use(
