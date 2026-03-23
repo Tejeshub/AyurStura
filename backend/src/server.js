@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 8000;
 // CORS: allow frontend origin and credentials (cookies)
 app.use(
   cors({
-    origin: true,
+    origin: "https://ayur-sutra-online.vercel.app",
     credentials: true,
   })
 );
