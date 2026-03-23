@@ -1,0 +1,134 @@
+/* Shared dashboard layout - header, badge, user info, logout */
+
+.dashboard {
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.patient-header { border-bottom-color: #bbf7d0; }
+.doctor-header { border-bottom-color: #bfdbfe; }
+.admin-header { border-bottom-color: #e9d5ff; }
+
+.header-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-left h1 {
+  font-size: 1.5rem;
+  color: #166534;
+}
+
+.user-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.patient-badge { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+.doctor-badge { background: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+.admin-badge { background: #faf5ff; color: #7c3aed; border-color: #e9d5ff; }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.help-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.patient-header .help-btn { border-color: #bbf7d0; color: #166534; }
+.patient-header .help-btn:hover { background: #f0fdf4; }
+.doctor-header .help-btn { border-color: #bfdbfe; color: #1e40af; }
+.doctor-header .help-btn:hover { background: #eff6ff; }
+.admin-header .help-btn { border-color: #e9d5ff; color: #7c3aed; }
+.admin-header .help-btn:hover { background: #faf5ff; }
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: white;
+}
+
+.patient-dashboard .avatar { background: #16a34a; }
+.doctor-dashboard .avatar { background: #1d4ed8; }
+.admin-dashboard .avatar { background: #7c3aed; }
+
+.avatar.large {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.5rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name { font-size: 0.875rem; font-weight: 500; }
+.user-email { font-size: 0.75rem; color: #6b7280; }
+
+.logout-btn {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.logout-btn:hover { color: #dc2626; }
+
+.dashboard-content {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .user-info .user-details { display: none; }
+}
