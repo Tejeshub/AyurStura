@@ -16,12 +16,12 @@ import chatbotRoutes from './routes/chatbotRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-const FRONTEND_URL = process.env.FRONTEND_URL || '*';
+// const FRONTEND_URL = process.env.FRONTEND_URL || '*';
 
 // CORS: allow frontend origin and credentials (cookies)
 app.use(
   cors({
-    origin: FRONTEND_URL,
+    origin: true,
     credentials: true,
   })
 );
