@@ -197,10 +197,12 @@
 
 @media (max-width: 1024px) {
   .landing-content {
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
   }
   .carousel-section {
-    min-height: 400px;
+    min-height: auto;
   }
 }
 
@@ -209,7 +211,7 @@
     flex-direction: column;
     gap: 0.5rem;
   }
-  .login-btn {
+  .login-btn {  
     font-size: 0.75rem;
     padding: 0.375rem 0.75rem;
   }
@@ -219,7 +221,48 @@
 
 @media (max-width: 480px) {
   .features-cards {
+    position: static;
+    transform: none;
+    margin: 2rem auto;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* hide trigger on desktop */
+.mobile-menu-trigger {
+  display: none;
+}
+
+/* mobile behavior */
+@media (max-width: 768px) {
+
+  .mobile-menu-trigger {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .menu-wrapper {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .menu-wrapper.show {
+    display: flex;
+  }
+
+  /* hide normal layout */
+  .login-options {
+    flex-direction: column;
+    align-items: flex-end;
   }
 }

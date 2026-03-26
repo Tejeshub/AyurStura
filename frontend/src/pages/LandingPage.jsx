@@ -13,6 +13,7 @@ export default function LandingPage() {
   const { user } = useAuth();
   const [particles, setParticles] = useState([]);
   const [chatOpen, setChatOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // If already logged in, offer redirect to dashboard
   useEffect(() => {
@@ -52,21 +53,54 @@ export default function LandingPage() {
           />
         ))}
       </div>
+     <div className="login-options">
 
-      <div className="login-options">
-        <button type="button" className="login-btn support-btn" onClick={() => setChatOpen(true)}>
-          💬 Support
-        </button>
-        <button type="button" className="login-btn patient-btn" onClick={() => showAuth('patient')}>
-          Login as Patient
-        </button>
-        <button type="button" className="login-btn doctor-btn" onClick={() => showAuth('doctor')}>
-          Login as Doctor
-        </button>
-        <button type="button" className="login-btn admin-btn" onClick={() => showAuth('admin')}>
-          Admin Panel
-        </button>
-      </div>
+  {/* menu button */}
+  <div 
+    className="mobile-menu-trigger" 
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    ⋮
+  </div>
+
+  {/* menu items */}
+  <div className={`menu-wrapper ${menuOpen ? 'show' : ''}`}>
+    
+    <button 
+      type="button" 
+      className="login-btn support-btn" 
+      onClick={() => setChatOpen(true)}
+    >
+      💬 Support
+    </button>
+
+    <button 
+      type="button" 
+      className="login-btn patient-btn" 
+      onClick={() => showAuth('patient')}
+    >
+      Login as Patient
+    </button>
+
+    <button 
+      type="button" 
+      className="login-btn doctor-btn" 
+      onClick={() => showAuth('doctor')}
+    >
+      Login as Doctor
+    </button>
+
+    <button 
+      type="button" 
+      className="login-btn admin-btn" 
+      onClick={() => showAuth('admin')}
+    >
+      Admin Panel
+    </button>
+
+  </div>
+
+</div>
 
       <div className="landing-content">
         <div className="hero-section">
